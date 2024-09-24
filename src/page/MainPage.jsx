@@ -12,7 +12,7 @@ const MainPage = () => {
                     navigate('signinpage');
                 }}
             >
-                로그인 페이지 가기
+                로그인 페이지 가기1
             </button>
         </>
     );
