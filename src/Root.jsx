@@ -1,5 +1,5 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { createGlobalStyle, styled } from 'styled-components';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
@@ -45,6 +45,7 @@ const AnimationContainer = styled.div`
 `;
 
 function Root() {
+    const location = useLocation();
     return (
         <>
             <Helmet>
@@ -52,7 +53,7 @@ function Root() {
             </Helmet>
             <GlobalStyle />
             <TransitionGroup>
-                <CSSTransition classNames="fade" timeout={300}>
+                <CSSTransition key={location.pathname} classNames="fade" timeout={300}>
                     <AnimationContainer>
                         <Outlet />
                     </AnimationContainer>
