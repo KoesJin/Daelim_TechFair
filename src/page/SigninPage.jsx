@@ -15,11 +15,11 @@ const SigninPage = () => {
           <S.Button type="submit">로그인</S.Button>
         </form>
         <S.Options>
-          <S.OptionLink onClick={() => { navigate('findidpage'); }}>아이디 찾기</S.OptionLink>
+          <S.OptionLink onClick={() => { navigate('/findidpage'); }}>아이디 찾기</S.OptionLink>
           <span>|</span>
-          <S.OptionLink onClick={() => { navigate('findpwpage'); }}>비밀번호 찾기</S.OptionLink>
+          <S.OptionLink onClick={() => { navigate('/findpwpage'); }}>비밀번호 찾기</S.OptionLink>
           <span>|</span>
-          <S.OptionLink onClick={() => { navigate('signuppage'); }}>회원가입</S.OptionLink>
+          <S.OptionLink onClick={() => { navigate('/signuppage'); }}>회원가입</S.OptionLink>
         </S.Options>
       </S.Box>
     </S.Container>

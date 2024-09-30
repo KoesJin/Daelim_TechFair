@@ -26,7 +26,7 @@ export const Box = styled.div`
 export const Title = styled.h2`
   color: #5e35b1;
   font-size: 24px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 `;
 
 /* 입력 필드 스타일 */
@@ -45,7 +45,7 @@ export const Input = styled.input`
 
 /* 로그인 버튼 스타일 */
 export const Button = styled.button`
-  margin-top: 16px;
+  margin-top: 25px;
   width: 100%;
   padding: 12px;
   background-color: #673fb8;
@@ -67,7 +67,7 @@ export const Options = styled.div`
   padding: 0 30px;
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: 10px;
   width: 100%;
   color: #5e35b1;
 `;
