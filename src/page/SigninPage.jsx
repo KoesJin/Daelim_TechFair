@@ -1,28 +1,44 @@
 import React from 'react';
-import * as S from '../css/SigninPageCSS.jsx';
+import styles from '../css/SigninPage.module.css';
 import { useNavigate } from 'react-router-dom';
+import Logo from '../png/logo.png';
 
 const SigninPage = () => {
   const navigate = useNavigate();
-
+  
   return (
-    <S.Container>
-      <S.Box>
-        <S.Title>로그인</S.Title>
-        <form>
-          <S.Input type="text" placeholder="아이디" />
-          <S.Input type="password" placeholder="비밀번호" />
-          <S.Button type="submit">로그인</S.Button>
-        </form>
-        <S.Options>
-          <S.OptionLink onClick={() => { navigate('/findidpage'); }}>아이디 찾기</S.OptionLink>
-          <span>|</span>
-          <S.OptionLink onClick={() => { navigate('/findpwpage'); }}>비밀번호 찾기</S.OptionLink>
-          <span>|</span>
-          <S.OptionLink onClick={() => { navigate('/signuppage'); }}>회원가입</S.OptionLink>
-        </S.Options>
-      </S.Box>
-    </S.Container>
+    <div className={styles.mainContainer}>
+      <div className={styles.leftContainer}>
+        <img src={Logo} alt="이미지" className={styles.image} />
+      </div>
+      <div className={styles.rightContainer}>
+        <div className={styles.box}>
+          <h1 className={styles.title}>로그인</h1>
+          <form>
+            <div className={styles.inputContainer}>
+              <label htmlFor="username" className={styles.label}>
+                아이디<span className={styles.required}>*</span>
+              </label>
+              <input id="username" type="text" className={styles.input} />
+            </div>
+            <div className={styles.inputContainer}>
+              <label htmlFor="password" className={styles.label}>
+                비밀번호<span className={styles.required}>*</span>
+              </label>
+              <input id="password" type="password" className={styles.input} />
+            </div>
+            <button type="submit" className={styles.button}>로그인</button>
+          </form>
+          <div className={styles.options}>
+            <span className={styles.optionLink} onClick={() => { navigate('/findidpage'); }}>아이디 찾기</span>
+            <span className={styles.divider}>|</span>
+            <span className={styles.optionLink} onClick={() => { navigate('/findpwpage'); }}>비밀번호 찾기</span>
+            <span className={styles.divider}>|</span>
+            <span className={styles.optionLink} onClick={() => { navigate('/signuppage'); }}>회원가입</span>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
