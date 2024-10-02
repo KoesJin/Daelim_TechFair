@@ -5,7 +5,7 @@ import Logo from '../png/logo.png';
 
 const SigninPage = () => {
   const navigate = useNavigate();
-  
+
   return (
     <div className={styles.mainContainer}>
       <div className={styles.leftContainer}>
@@ -13,7 +13,7 @@ const SigninPage = () => {
       </div>
       <div className={styles.rightContainer}>
         <div className={styles.box}>
-          <h1 className={styles.title}>로그인</h1>
+          <h1>로그인</h1>
           <form>
             <div className={styles.inputContainer}>
               <label htmlFor="username" className={styles.label}>
@@ -27,7 +27,7 @@ const SigninPage = () => {
               </label>
               <input id="password" type="password" className={styles.input} />
             </div>
-            <button type="submit" className={styles.button}>로그인</button>
+            <button type="submit">로그인</button>
           </form>
           <div className={styles.options}>
             <span className={styles.optionLink} onClick={() => { navigate('/findidpage'); }}>아이디 찾기</span>

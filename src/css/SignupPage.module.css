@@ -1,0 +1,10 @@
+.mainContainer {
+  display: flex;
+  height: 100vh;
+  background-image: url("../png/loginBackground.avif");
+  background-repeat : no-repeat;
+  background-size : cover;
+}
+h1 {
+  
+}
