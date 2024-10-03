@@ -1,71 +1,68 @@
 .mainContainer {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   height: 100vh;
   background-image: url("../img/loginBackground.avif");
-  background-repeat : no-repeat;
-  background-size : cover;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+
 .Container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  place-items: center;
   height: 100vh;
   background-image: url("../img/loginBackground.avif");
-  background-repeat : no-repeat;
-  background-size : cover;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+
 .leftContainer {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  place-items: center;
   padding-left: 80px;
 }
+
 .image {
   width: 65%;
   height: auto;
   object-fit: contain;
 }
+
 .rightContainer {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  place-items: center;
   padding: 20px;
   padding-right: 120px;
 }
+
 .box {
   width: 50%;
 }
+
 .boxContainer {
   padding: 2%;
   width: 25%;
   border-radius: 20px;
   background-color: rgba(0, 0, 0, 0.1);
 }
+
 .h1 {
   font-size: 40px;
   margin-bottom: 50px;
   text-align: center;
   color: #644d45;
 }
-.container {
-  width: 100%;
-  max-width: 350px;
-  padding: 20px;
-  background-color: white;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-}
+
 .inputContainer {
   margin-bottom: 15px;
 }
+
 .label {
   font-size: 14px;
   margin-bottom: 5px;
   padding-left: 15px;
 }
+
 .input {
   width: 100%;
   padding: 10px;
@@ -73,10 +70,12 @@
   border: 1px solid #e6e6e6;
   border-radius: 50px;
 }
+
 .input:focus {
   border: 1px solid #848484;
   outline: none;
 }
+
 .button {
   margin-top: 23px;
   width: 100%;
@@ -89,28 +88,35 @@
   cursor: pointer;
   transition: all 0.3s ease;
 }
+
 button:hover {
   background-color: #5c3022;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
 .options {
-  display: flex;
+  display: grid;
+  grid-auto-flow: column;
   justify-content: center;
   margin-top: 10px;
+  gap: 10px;
 }
+
 .optionLink {
   font-size: 15px;
   margin-top: 2px;
   color: #644d45;
   cursor: pointer;
 }
+
 .optionLink:hover {
   text-decoration: underline;
 }
+
 .divider {
-  margin: 0 10px;
   color: #ccc;
 }
+
 .required {
   color: red;
 }
