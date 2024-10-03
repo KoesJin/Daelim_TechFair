@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../css/SignPage.module.css'; // 동일한 CSS 파일을 사용한다고 가정
+import styles from '../css/SignPage.module.css';
 import { useNavigate } from 'react-router-dom';
 
 const SignupPage = () => {

@@ -34,7 +34,7 @@ const SigninPage = () => {
             <span className={styles.divider}>|</span>
             <span className={styles.optionLink} onClick={() => { navigate('/findpwpage'); }}>비밀번호 찾기</span>
             <span className={styles.divider}>|</span>
-            <span className={styles.optionLink} onClick={() => { navigate('/signuppage'); }}>회원가입</span> {/*여기도 수정되어야함*/}
+            <span className={styles.optionLink} onClick={() => { navigate('/signuppage'); }}>회원가입</span>
           </div>
         </div>
       </div>
