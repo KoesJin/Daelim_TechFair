@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../css/SignPage.module.css';
 import { useNavigate } from 'react-router-dom';
-import Logo from '../png/logo.png';
+import Logo from '../img/logo.png';
 
 const SigninPage = () => {
   const navigate = useNavigate();

@@ -1,7 +1,7 @@
 .mainContainer {
   display: flex;
   height: 100vh;
-  background-image: url("../png/loginBackground.avif");
+  background-image: url("../img/loginBackground.avif");
   background-repeat : no-repeat;
   background-size : cover;
 }
@@ -10,7 +10,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url("../png/loginBackground.avif");
+  background-image: url("../img/loginBackground.avif");
   background-repeat : no-repeat;
   background-size : cover;
 }
