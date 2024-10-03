@@ -42,6 +42,9 @@ const SignupPage = () => {
           </div>
           <button type="submit" className={styles.button}>회원가입</button>
         </form>
+        <div className={styles.options}>
+          <span className={styles.optionLink} onClick={() => { navigate('/signinpage'); }}>계정 로그인하기</span>
+        </div>
       </div>
     </div>
   );
