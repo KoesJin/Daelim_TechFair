@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../css/SigninPage.module.css';
+import styles from '../css/SignPage.module.css';
 import { useNavigate } from 'react-router-dom';
 import Logo from '../png/logo.png';
 
@@ -13,7 +13,7 @@ const SigninPage = () => {
       </div>
       <div className={styles.rightContainer}>
         <div className={styles.box}>
-          <h1>로그인</h1>
+          <h1 className={styles.h1}>로그인</h1>
           <form>
             <div className={styles.inputContainer}>
               <label htmlFor="username" className={styles.label}>
@@ -27,14 +27,14 @@ const SigninPage = () => {
               </label>
               <input id="password" type="password" className={styles.input} />
             </div>
-            <button type="submit">로그인</button>
+            <button type="submit" className={styles.button}>로그인</button>
           </form>
           <div className={styles.options}>
             <span className={styles.optionLink} onClick={() => { navigate('/findidpage'); }}>아이디 찾기</span>
             <span className={styles.divider}>|</span>
             <span className={styles.optionLink} onClick={() => { navigate('/findpwpage'); }}>비밀번호 찾기</span>
             <span className={styles.divider}>|</span>
-            <span className={styles.optionLink} onClick={() => { navigate('/signuppage'); }}>회원가입</span>
+            <span className={styles.optionLink} onClick={() => { navigate('/signuppage'); }}>회원가입</span> {/*여기도 수정되어야함*/}
           </div>
         </div>
       </div>

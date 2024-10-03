@@ -1,40 +1,46 @@
 import React from 'react';
-import styles from '../css/SignupPage.module.css';
+import styles from '../css/SignPage.module.css'; // 동일한 CSS 파일을 사용한다고 가정
 import { useNavigate } from 'react-router-dom';
 
 const SignupPage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className={styles.mainContainer}>
-      <div>
-        <h1>회원가입</h1>
+    <div className={styles.Container}>
+      <div className={styles.boxContainer}>
+        <h1 className={styles.h1}>회원가입</h1>
         <form>
-          <div>
-            <label htmlFor="username">
-              아이디<span>*</span>
+          <div className={styles.inputContainer}>
+            <label htmlFor="username" className={styles.label}>
+              아이디<span className={styles.required}>*</span>
             </label>
-            <input id="username" type="text"/>
+            <input id="username" type="text" className={styles.input}/>
           </div>
-          <div>
-            <label htmlFor="password">
-              비밀번호<span>*</span>
+          <div className={styles.inputContainer}>
+            <label htmlFor="password" className={styles.label}>
+              비밀번호<span className={styles.required}>*</span>
             </label>
-            <input id="password" type="password"/>
+            <input id="password" type="password" className={styles.input}/>
           </div>
-          <div>
-            <label htmlFor="name">
-              이름<span>*</span>
+          <div className={styles.inputContainer}>
+            <label htmlFor="passwordCheck" className={styles.label}>
+              비밀번호 확인<span className={styles.required}>*</span>
             </label>
-            <input id="name" type="text" />
+            <input id="passwordCheck" type="password" className={styles.input}/>
           </div>
-          <div>
-            <label htmlFor="tel">
-              전화번호<span>*</span>
+          <div className={styles.inputContainer}>
+            <label htmlFor="name" className={styles.label}>
+              이름<span className={styles.required}>*</span>
             </label>
-            <input id="tel" type="tel" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"/>
+            <input id="name" type="text" className={styles.input}/>
           </div>
-          <button type="submit">회원가입</button>
+          <div className={styles.inputContainer}>
+            <label htmlFor="tel" className={styles.label}>
+              전화번호<span className={styles.required}>*</span>
+            </label>
+            <input id="tel" type="tel" className={styles.input}/>
+          </div>
+          <button type="submit" className={styles.button}>회원가입</button>
         </form>
       </div>
     </div>
