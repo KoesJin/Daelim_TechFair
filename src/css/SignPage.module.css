@@ -120,3 +120,32 @@ button:hover {
 .required {
   color: red;
 }
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  margin-left: 10px;
+}
+
+.checkboxLabel {
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+input[type="checkbox"] {
+  margin-top: 2px;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+  accent-color: #644d45;
+}
+
+.detailLink {
+  margin-left: 10px;
+  font-size: 12px;
+  color: #007bff;
+  cursor: pointer;
+}
