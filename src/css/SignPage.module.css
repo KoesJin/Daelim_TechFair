@@ -120,6 +120,7 @@ button:hover {
 .required {
   color: red;
 }
+
 .checkboxContainer {
   display: flex;
   align-items: center;
@@ -148,4 +149,16 @@ input[type="checkbox"]:checked {
   font-size: 12px;
   color: #007bff;
   cursor: pointer;
+}
+
+.inputShort {
+  width: 70%;
+}
+
+.sendButton {
+  width: 25%;
+  font-size: 12px;
+  padding: 10px;
+  float:right;
+  margin-top : 3px;
 }

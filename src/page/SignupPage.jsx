@@ -9,15 +9,17 @@ const SignupPage = () => {
   const [passwordCheck, setPasswordCheck] = useState("");
   const [name, setName] = useState("");
   const [tel, setTel] = useState("");
-  const [isAgreedToAds, setIsAgreedToAds] = useState(false);
-  const [isAgreedToPrivacy, setIsAgreedToPrivacy] = useState(false);
+  const [AgreedToAds, setAgreedToAds] = useState(false);
+  const [AgreedToPrivacy, setAgreedToPrivacy] = useState(false);
+  const [showCertification, setShowCertification] = useState(false);
+  const [certification, setCertification] = useState("");
 
   const handleAdsChange = () => {
-    setIsAgreedToAds(!isAgreedToAds);
+    setAgreedToAds(!AgreedToAds);
   };
 
   const handlePrivacyChange = () => {
-    setIsAgreedToPrivacy(!isAgreedToPrivacy);
+    setAgreedToPrivacy(!AgreedToPrivacy);
   };
 
   const handlePhoneNumberChange = (e) => {
@@ -41,10 +43,26 @@ const SignupPage = () => {
     setName(e.target.value);
   };
 
+  const handlecertificationChange = (e) => {
+    setCertification(e.target.value);
+  };
+
+  const handleSendcertification = () => {
+    setShowCertification(true);
+  };
+
+  const handleVerifyCode = () => {
+    if (certification === "123456") { // 나중에 변수로 바꾸면 되용~
+      alert("인증이 완료되었습니다.");
+    } else {
+      alert("인증번호가 틀렸습니다.");
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    if (!isAgreedToPrivacy) {
+    if (!AgreedToPrivacy) {
       alert("개인정보 활용 동의를 해주세요.");
       return;
     }
@@ -53,9 +71,7 @@ const SignupPage = () => {
       alert("비밀번호가 일치하지 않습니다.");
       return;
     }
-
-    // 회원가입 처리 로직 (API 요청 등)
-    console.log('회원가입 정보:', { id, password, name, tel, isAgreedToAds });
+    console.log('회원가입 정보:', { id, password, name, tel, AgreedToAds, AgreedToPrivacy });
   };
 
   return (
@@ -105,19 +121,47 @@ const SignupPage = () => {
           </div>
           <div className={styles.inputContainer}>
             <label htmlFor="tel" className={styles.label}>전화번호</label>
-            <input
-              id="tel"
-              type="tel"
-              className={styles.input}
-              value={tel}
-              onChange={handlePhoneNumberChange}
-            />
+            <div className={styles.inputWithButton}>
+              <input
+                id="tel"
+                type="tel"
+                className={`${styles.inputShort} ${styles.input}`}
+                value={tel}
+                onChange={handlePhoneNumberChange}
+              />
+              <button
+                type="button"
+                className={`${styles.sendButton} ${styles.button}`}
+                onClick={handleSendcertification}
+              >인증번호 발송
+              </button>
+            </div>
           </div>
+          {showCertification && (
+            <div className={styles.inputContainer}>
+              <div className={styles.inputWithButton}>
+                <input
+                  id="certification"
+                  type="text"
+                  placeholder="인증번호를 입력하세요"
+                  className={`${styles.inputShort} ${styles.input}`}
+                  value={certification}
+                  onChange={handlecertificationChange}
+                />
+                <button
+                  type="button"
+                  className={`${styles.sendButton} ${styles.button}`}
+                  onClick={handleVerifyCode}
+                >확인
+                </button>
+              </div>
+            </div>
+          )}
           <div className={styles.checkboxContainer}>
             <input
               type="checkbox"
               id="privacy"
-              checked={isAgreedToPrivacy}
+              checked={AgreedToPrivacy}
               onChange={handlePrivacyChange}
             />
             <label htmlFor="privacy" className={styles.checkboxLabel}>
@@ -130,7 +174,7 @@ const SignupPage = () => {
             <input
               type="checkbox"
               id="ads"
-              checked={isAgreedToAds}
+              checked={AgreedToAds}
               onChange={handleAdsChange}
             />
             <label htmlFor="ads" className={styles.checkboxLabel}>
