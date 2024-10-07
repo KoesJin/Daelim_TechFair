@@ -41,14 +41,14 @@
 
 .boxContainer {
   padding: 2%;
-  width: 25%;
+  width: 30%;
   border-radius: 20px;
   background-color: rgba(0, 0, 0, 0.1);
 }
 
 .h1 {
   font-size: 40px;
-  margin-bottom: 50px;
+  margin-bottom: 35px;
   text-align: center;
   color: #644d45;
 }
