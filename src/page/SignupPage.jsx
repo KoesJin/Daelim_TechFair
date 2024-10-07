@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from '../css/SignPage.module.css';
 import { useNavigate } from 'react-router-dom';
+import Modal from '../components/AgreeModal';
 
 const SignupPage = () => {
   const navigate = useNavigate();
@@ -13,6 +14,7 @@ const SignupPage = () => {
   const [AgreedToPrivacy, setAgreedToPrivacy] = useState(false);
   const [showCertification, setShowCertification] = useState(false);
   const [certification, setCertification] = useState("");
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const handleAdsChange = () => {
     setAgreedToAds(!AgreedToAds);
@@ -57,6 +59,14 @@ const SignupPage = () => {
     } else {
       alert("인증번호가 틀렸습니다.");
     }
+  };
+
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
   };
 
   const handleSubmit = (e) => {
@@ -167,7 +177,7 @@ const SignupPage = () => {
             <label htmlFor="privacy" className={styles.checkboxLabel}>
               <span className={styles.required}>(필수)</span> 개인정보 활용 동의
               <span className={styles.required}>*</span>
-              <span className={styles.detailLink} onClick> 자세히 보기</span>
+              <span className={styles.detailLink} onClick={openModal}> 자세히 보기</span>
             </label>
           </div>
           <div className={styles.checkboxContainer}>
@@ -180,7 +190,7 @@ const SignupPage = () => {
             <label htmlFor="ads" className={styles.checkboxLabel}>
               광고성 메시지 전송 동의
               <span className={styles.required}>*</span>
-              <span className={styles.detailLink} onClick> 자세히 보기</span>
+              <span className={styles.detailLink} onClick={openModal}> 자세히 보기</span>
             </label>
           </div>
           <button type="submit" className={styles.button}>회원가입</button>
@@ -189,6 +199,10 @@ const SignupPage = () => {
           <span className={styles.optionLink} onClick={() => { navigate('/signinpage'); }}>계정 로그인하기</span>
         </div>
       </div>
+      <Modal
+        isOpen={modalIsOpen} 
+        onRequestClose={closeModal} 
+      />
     </div>
   );
 };
