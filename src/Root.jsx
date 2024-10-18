@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
-      overflow-y: hidden; /* 가로 스크롤을 막되 세로 스크롤은 허용 */
+      overflow-y: scroll; /* 가로 스크롤을 막되 세로 스크롤은 허용 */
     }
 
     .fade-enter {
