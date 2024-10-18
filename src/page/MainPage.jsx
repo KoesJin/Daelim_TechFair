@@ -1,11 +1,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import Header from '../components/Header';
 
 const MainPage = () => {
     const navigate = useNavigate();
 
     return (
         <>
+          <Header></Header>
             <div>MainPage</div>
             <button
                 onClick={() => {

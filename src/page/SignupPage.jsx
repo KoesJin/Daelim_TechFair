@@ -15,6 +15,7 @@ const SignupPage = () => {
   const [showCertification, setShowCertification] = useState(false);
   const [certification, setCertification] = useState("");
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [modalType, setModalType] = useState("");
 
   const handleAdsChange = () => {
     setAgreedToAds(!AgreedToAds);
@@ -61,12 +62,14 @@ const SignupPage = () => {
     }
   };
 
-  const openModal = () => {
+  const openModal = (type) => {
+    setModalType(type);
     setModalIsOpen(true);
   };
 
   const closeModal = () => {
     setModalIsOpen(false);
+    setModalType(""); 
   };
 
   const handleSubmit = (e) => {
@@ -177,8 +180,8 @@ const SignupPage = () => {
             <label htmlFor="privacy" className={styles.checkboxLabel}>
               <span className={styles.required}>(필수)</span> 개인정보 활용 동의
               <span className={styles.required}>*</span>
-              <span className={styles.detailLink} onClick={openModal}> 자세히 보기</span>
             </label>
+            <span className={styles.detailLink} onClick={() => openModal('privacy')}> 자세히 보기</span>
           </div>
           <div className={styles.checkboxContainer}>
             <input
@@ -190,8 +193,8 @@ const SignupPage = () => {
             <label htmlFor="ads" className={styles.checkboxLabel}>
               광고성 메시지 전송 동의
               <span className={styles.required}>*</span>
-              <span className={styles.detailLink} onClick={openModal}> 자세히 보기</span>
             </label>
+            <span className={styles.detailLink} onClick={() => openModal('ads')}> 자세히 보기</span>
           </div>
           <button type="submit" className={styles.button}>회원가입</button>
         </form>
@@ -202,6 +205,7 @@ const SignupPage = () => {
       <Modal
         isOpen={modalIsOpen} 
         onRequestClose={closeModal} 
+        modalType={modalType}
       />
     </div>
   );

@@ -1,0 +1,48 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #644d45;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  margin-right: 30px;
+}
+
+.nav {
+  display: flex;
+  justify-content: start; 
+  margin-left: 4%;
+}
+
+.navItem {
+  margin-left: 15px; 
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+}
+
+.authButtons {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+}
+
+.authButton {
+  margin-left: 15px;
+  font-size: 16px;
+  color: white;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  padding: 5px 10px;
+}
+
+.authButton:hover {
+  font-weight: bold;
+}

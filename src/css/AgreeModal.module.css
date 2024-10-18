@@ -31,3 +31,14 @@
   font-size: 18px;
   color: #555;
 }
+
+.closeButton:hover,
+.closeButton:focus,
+.closeButton:active {
+  background: none;
+  border: none;
+}
+
+h2 {
+  text-align: center;
+}
