@@ -1,21 +1,9 @@
-.splitContainer {
-  padding-top: 10px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.leftSection {
-  width: 45%;
+.topContainer {
+  padding-top: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px 0;
-}
-
-.rightSection {
-  width: 60%;
-  padding: 20px 130px 5px 0px;
 }
 
 h1 {
@@ -26,7 +14,7 @@ h1 {
   display: flex;
   align-items: center;
   margin-top: 20px;
-  width: 70%;
+  width: 40%;
   background-color: #e7e7e7;
   padding: 12px 15px;
   border-radius: 50px;
@@ -34,7 +22,7 @@ h1 {
 
 .searchIcon {
   margin-right: 10px;
-  color: #6b6b6b;
+  color: #3a261e;
 }
 
 .searchBar {

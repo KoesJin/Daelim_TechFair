@@ -39,9 +39,9 @@ const GlobalStyle = createGlobalStyle`
   `;
 
 const AnimationContainer = styled.div`
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 `;
 
 function Root() {
@@ -49,7 +49,7 @@ function Root() {
     return (
         <>
             <Helmet>
-                <title>Balance Game</title>
+              <title>Balance Game</title>
             </Helmet>
             <GlobalStyle />
             <TransitionGroup>

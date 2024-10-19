@@ -7,21 +7,16 @@ import { FaSearch } from 'react-icons/fa';
 
 const MainPage = () => {
   const navigate = useNavigate();
-  const balanceBoxes = new Array(12).fill(0);
+  const balanceBoxes = new Array(60).fill(0);
 
   return (
     <>
       <Header />
-      <div className={styles.splitContainer}>
-        <div className={styles.leftSection}>
-          <h1>밸런스게임</h1>
-          <div className={styles.searchContainer}>
-            <FaSearch className={styles.searchIcon} />
-            <input type="text" placeholder="검색어를 입력하세요" className={styles.searchBar} />
-          </div>
-        </div>
-        <div className={styles.rightSection}>
-          <div className={styles.chatBox}>실시간 채팅</div>
+      <div className={styles.topContainer}>
+        <h1>밸런스게임</h1>
+        <div className={styles.searchContainer}>
+          <FaSearch className={styles.searchIcon} />
+          <input type="text" placeholder="검색어를 입력하세요" className={styles.searchBar} />
         </div>
       </div>
       <div className={styles.gridContainer}>
