@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styles from '../css/SignPage.module.css';
 import { useNavigate } from 'react-router-dom';
 import Modal from '../components/AgreeModal';
+import axios from 'axios';
 
 const SignupPage = () => {
   const navigate = useNavigate();
@@ -72,7 +73,17 @@ const SignupPage = () => {
     setModalType(""); 
   };
 
-  const handleSubmit = (e) => {
+  const signupData = {
+    id,
+    password,
+    passwordCheck,
+    name,
+    tel,
+    AgreedToAds,
+    AgreedToPrivacy,
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     if (!AgreedToPrivacy) {
@@ -84,7 +95,16 @@ const SignupPage = () => {
       alert("비밀번호가 일치하지 않습니다.");
       return;
     }
-    console.log('회원가입 정보:', { id, password, name, tel, AgreedToAds, AgreedToPrivacy });
+
+    try {
+      const response = await axios.post('https://121.139.20.242:(포트번호)/api/users/sigup', signupData);
+      console.log('회원가입 성공:', response.data);
+      alert('회원가입이 성공적으로 완료되었습니다.');
+      navigate('/signinpage');
+    } catch (error) {
+      console.error('회원가입 실패:', error);
+      alert('회원가입 중 오류가 발생했습니다.');
+    }
   };
 
   return (
