@@ -13,8 +13,10 @@ const SignupPage = () => {
   const [tel, setTel] = useState("");
   const [AgreedToAds, setAgreedToAds] = useState(false);
   const [AgreedToPrivacy, setAgreedToPrivacy] = useState(false);
-  const [showCertification, setShowCertification] = useState(false);
-  const [certification, setCertification] = useState("");
+  const [showAuth, setShowAuth] = useState(false);
+  const [userAuthCode, setUserAuthCode] = useState("");
+  const [authCode, setAuthCode] = useState("");
+  const [authCheck, setAuthCheck] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [modalType, setModalType] = useState("");
 
@@ -26,7 +28,7 @@ const SignupPage = () => {
     setAgreedToPrivacy(!AgreedToPrivacy);
   };
 
-  const handlePhoneNumberChange = (e) => {
+  const handleTelChange = (e) => {
     const inputValue = e.target.value.replace(/[^0-9]/g, "");
     setTel(inputValue);
   };
@@ -47,17 +49,25 @@ const SignupPage = () => {
     setName(e.target.value);
   };
 
-  const handlecertificationChange = (e) => {
-    setCertification(e.target.value);
+  const handleUserAuthChange = (e) => {
+    setUserAuthCode(e.target.value);
   };
 
-  const handleSendcertification = () => {
-    setShowCertification(true);
+  const handleSendAuthCode = async () => {
+    setShowAuth(true);
+    try {
+      const response = await axios.get('https://121.139.20.242:1492/api/user/sms/send-code', tel);
+      console.log('인증번호 받기 성공:', response.data.authCode);
+      setAuthCode(response.data.authCode);
+    } catch (error) {
+      console.error('인증번호 받기 실패:', error);
+    }
   };
 
-  const handleVerifyCode = () => {
-    if (certification === "123456") { // 나중에 변수로 바꾸면 되용~
+  const handleCheckCode = () => {
+    if (userAuthCode.trim() === authCode.trim()) {
       alert("인증이 완료되었습니다.");
+      setAuthCheck(true);
     } else {
       alert("인증번호가 틀렸습니다.");
     }
@@ -79,25 +89,29 @@ const SignupPage = () => {
     passwordCheck,
     name,
     tel,
-    AgreedToAds,
-    AgreedToPrivacy,
+    AgreedToPrivacy
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     
     if (!AgreedToPrivacy) {
-      alert("개인정보 활용 동의를 해주세요.");
+      alert("개인정보 활용 동의를 해주세요");
+      return;
+    }
+
+    if (!authCheck) {
+      alert("전화번호 인증을 해주세요");
       return;
     }
 
     if (password !== passwordCheck) {
-      alert("비밀번호가 일치하지 않습니다.");
+      alert("비밀번호가 일치하지 않습니다");
       return;
     }
 
     try {
-      const response = await axios.post('https://121.139.20.242:(포트번호)/api/users/sigup', signupData);
+      const response = await axios.post('https://121.139.20.242:1492/api/user/signup', signupData);
       console.log('회원가입 성공:', response.data);
       alert('회원가입이 성공적으로 완료되었습니다.');
       navigate('/signinpage');
@@ -160,17 +174,17 @@ const SignupPage = () => {
                 type="tel"
                 className={`${styles.inputShort} ${styles.input}`}
                 value={tel}
-                onChange={handlePhoneNumberChange}
+                onChange={handleTelChange}
               />
               <button
                 type="button"
                 className={`${styles.sendButton} ${styles.button}`}
-                onClick={handleSendcertification}
+                onClick={handleSendAuthCode}
               >인증번호 발송
               </button>
             </div>
           </div>
-          {showCertification && (
+          {showAuth && (
             <div className={styles.inputContainer}>
               <div className={styles.inputWithButton}>
                 <input
@@ -178,13 +192,13 @@ const SignupPage = () => {
                   type="text"
                   placeholder="인증번호를 입력하세요"
                   className={`${styles.inputShort} ${styles.input}`}
-                  value={certification}
-                  onChange={handlecertificationChange}
+                  value={userAuthCode}
+                  onChange={handleUserAuthChange}
                 />
                 <button
                   type="button"
                   className={`${styles.sendButton} ${styles.button}`}
-                  onClick={handleVerifyCode}
+                  onClick={handleCheckCode}
                 >확인
                 </button>
               </div>
