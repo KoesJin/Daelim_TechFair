@@ -1,41 +1,84 @@
 .chatContainer {
   padding: 5px;
-  background-color: #f0f0f0; /* 배경색 */
+  background-color: #ededed; /* 배경색 */
   height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
 .navItem {
-  font-size: 24px;
+  font-size: 20px;
   margin-bottom: 10px;
-  font-weight: bold;
+  font-weight: 500;
+  text-align: center;
 }
 
 .messages {
   flex: 1; /* 메시지 영역이 남은 공간을 차지하게 */
   overflow-y: auto; /* 스크롤 가능 */
   padding: 10px;
-  background-color: white; /* 메시지 배경색 */
+  background-color: #b0a097; /* 메시지 배경색 */
   border-radius: 8px; /* 메시지 박스 둥글게 */
 }
 
 .message {
-  max-width: 70%; /* 메시지 최대 너비 */
-  padding: 10px;
+  max-width: 90%; /* 메시지 최대 너비 */
+  padding: 3px;
   border-radius: 8px;
   margin: 5px 0;
+  display: flex; /* 프로필 이미지와 메시지 내용 나란히 배치 */
+  align-items: flex-start; /* 세로 정렬 */
   position: relative; /* 상대 위치 */
 }
 
 .userMessage {
-  background-color: #d4f5a1; /* 사용자 메시지 색상 */
-  align-self: flex-end; /* 오른쪽 정렬 */
+  flex-direction: row; /* 프로필 사진 왼쪽 */
 }
 
 .otherMessage {
   background-color: #f1f1f1; /* 다른 사용자 메시지 색상 */
-  align-self: flex-start; /* 왼쪽 정렬 */
+  flex-direction: row; /* 다른 사용자도 동일하게 */
+}
+
+.profileImg {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 10px; /* 메시지 내용과 간격 */
+}
+
+.messageBody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.messageHeader {
+  display: flex;
+  justify-content: space-between; /* username과 timestamp를 양쪽에 배치 */
+  align-items: center; /* 수직 중앙 정렬 */
+  margin-bottom: 5px;
+}
+
+.username {
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+
+.timestamp {
+  font-size: 11px;
+  color: #e2e2e2;
+  display: flex;
+  align-self: flex-end;
+  min-width: 50px;
+}
+
+.text {
+  padding: 5px 7px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  font-size: 14px;
+  margin-right: 5px;
 }
 
 .inputContainer {

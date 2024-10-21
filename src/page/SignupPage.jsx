@@ -24,39 +24,6 @@ const SignupPage = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [modalType, setModalType] = useState('');
 
-  const handleAdsChange = () => {
-    setAgreedToAds(!AgreedToAds);
-  };
-
-  const handlePrivacyChange = () => {
-    setAgreedToPrivacy(!AgreedToPrivacy);
-  };
-
-  const handleTelChange = (e) => {
-    const inputValue = e.target.value.replace(/[^0-9]/g, '');
-    setTel(inputValue);
-  };
-
-  const handleIdChange = (e) => {
-    setId(e.target.value);
-  };
-
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
-
-  const handlePasswordCheckChange = (e) => {
-    setPasswordCheck(e.target.value);
-  };
-
-  const handleNameChange = (e) => {
-    setName(e.target.value);
-  };
-
-  const handleUserAuthChange = (e) => {
-    setUserAuthCode(e.target.value);
-  };
-
   const handleSendAuthCode = async () => {
     setShowAuth(true);
     try {
@@ -137,7 +104,13 @@ const SignupPage = () => {
             <label htmlFor="username" className={styles.label}>
               아이디
             </label>
-            <input id="username" type="text" className={styles.input} value={id} onChange={handleIdChange} />
+            <input
+              id="username"
+              type="text"
+              className={styles.input}
+              value={id}
+              onChange={(e) => setId(e.target.value)}
+            />
           </div>
           <div className={styles.inputContainer}>
             <label htmlFor="password" className={styles.label}>
@@ -148,7 +121,7 @@ const SignupPage = () => {
               type="password"
               className={styles.input}
               value={password}
-              onChange={handlePasswordChange}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           <div className={styles.inputContainer}>
@@ -160,14 +133,20 @@ const SignupPage = () => {
               type="password"
               className={styles.input}
               value={passwordCheck}
-              onChange={handlePasswordCheckChange}
+              onChange={(e) => setPasswordCheck(e.target.value)}
             />
           </div>
           <div className={styles.inputContainer}>
             <label htmlFor="name" className={styles.label}>
               이름
             </label>
-            <input id="name" type="text" className={styles.input} value={name} onChange={handleNameChange} />
+            <input
+              id="name"
+              type="text"
+              className={styles.input}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
           </div>
           <div className={styles.inputContainer}>
             <label htmlFor="tel" className={styles.label}>
@@ -179,7 +158,7 @@ const SignupPage = () => {
                 type="tel"
                 className={`${styles.inputShort} ${styles.input}`}
                 value={tel}
-                onChange={handleTelChange}
+                onChange={(e) => setTel(e.target.value.replace(/[^0-9]/g, ''))}
               />
               <button type="button" className={`${styles.sendButton} ${styles.button}`} onClick={handleSendAuthCode}>
                 인증번호 발송
@@ -195,7 +174,7 @@ const SignupPage = () => {
                   placeholder="인증번호를 입력하세요"
                   className={`${styles.inputShort} ${styles.input}`}
                   value={userAuthCode}
-                  onChange={handleUserAuthChange}
+                  onChange={(e) => setUserAuthCode(e.target.value)}
                 />
                 <button type="button" className={`${styles.sendButton} ${styles.button}`} onClick={handleCheckCode}>
                   확인
@@ -204,7 +183,12 @@ const SignupPage = () => {
             </div>
           )}
           <div className={styles.checkboxContainer}>
-            <input type="checkbox" id="privacy" checked={AgreedToPrivacy} onChange={handlePrivacyChange} />
+            <input
+              type="checkbox"
+              id="privacy"
+              checked={AgreedToPrivacy}
+              onChange={(e) => setAgreedToPrivacy(e.target.checked)}
+            />
             <label htmlFor="privacy" className={styles.checkboxLabel}>
               <span className={styles.required}>(필수)</span> 개인정보 활용 동의
               <span className={styles.required}>*</span>
@@ -215,7 +199,7 @@ const SignupPage = () => {
             </span>
           </div>
           <div className={styles.checkboxContainer}>
-            <input type="checkbox" id="ads" checked={AgreedToAds} onChange={handleAdsChange} />
+            <input type="checkbox" id="ads" checked={AgreedToAds} onChange={(e) => setAgreedToAds(e.target.checked)} />
             <label htmlFor="ads" className={styles.checkboxLabel}>
               광고성 메시지 전송 동의
               <span className={styles.required}>*</span>

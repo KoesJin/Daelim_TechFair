@@ -57,8 +57,8 @@ const GamePage = () => {
         </div>
       </div>
       <div className={styles.commentSection}>
-        <h2>댓글</h2>
-        <form action="">
+        <h2 lassName={styles.h2}>댓글</h2>
+        <form action="" className={styles.form}>
           <img className={styles.profileImg} src={profileImg} alt="Profile" />
           <input type="text" className={styles.userComment} placeholder="댓글을 작성하세요" />
           <button className={styles.submit}>작성</button>
