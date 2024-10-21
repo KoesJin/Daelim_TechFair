@@ -22,6 +22,28 @@
   padding-left: 80px;
 }
 
+.homeButton {
+  position: absolute; /* 절대 위치 */
+  top: 20px; /* 위에서의 간격 */
+  left: 20px;
+  border-radius: 50px;
+  background: none;
+  color: #644d45;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.homeButton:hover {
+  background: none;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+}
+
 .image {
   width: 65%;
   height: auto;

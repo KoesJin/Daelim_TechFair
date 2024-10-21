@@ -4,6 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import Modal from '../components/AgreeModal';
 import axios from 'axios';
 
+const protocol = window.location.protocol === 'https:' ? 'https' : 'http';
+const baseURL = `${protocol}://121.139.20.242:1492/api`;
+
 const SignupPage = () => {
   const navigate = useNavigate();
   const [id, setId] = useState("");
@@ -56,7 +59,7 @@ const SignupPage = () => {
   const handleSendAuthCode = async () => {
     setShowAuth(true);
     try {
-      const response = await axios.get('https://121.139.20.242:1492/api/user/sms/send-code', tel);
+      const response = await axios.get(`${baseURL}/user/sms/send-code`, tel);
       console.log('인증번호 받기 성공:', response.data.authCode);
       setAuthCode(response.data.authCode);
     } catch (error) {
@@ -111,7 +114,7 @@ const SignupPage = () => {
     }
 
     try {
-      const response = await axios.post('https://121.139.20.242:1492/api/user/signup', signupData);
+      const response = await axios.post(`${baseURL}/user/signup`, signupData);
       console.log('회원가입 성공:', response.data);
       alert('회원가입이 성공적으로 완료되었습니다.');
       navigate('/signinpage');
