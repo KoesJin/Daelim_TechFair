@@ -35,8 +35,9 @@
 .closeButton:hover,
 .closeButton:focus,
 .closeButton:active {
-  background: none;
   border: none;
+  background: transparent;
+  box-shadow: none;
 }
 
 h2 {

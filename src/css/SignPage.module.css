@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: 100vh;
-  background-image: url("../img/loginBackground.avif");
+  background-image: url('../img/loginBackground.avif');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -11,7 +11,7 @@
   display: grid;
   place-items: center;
   height: 100vh;
-  background-image: url("../img/loginBackground.avif");
+  background-image: url('../img/loginBackground.avif');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -36,7 +36,8 @@
 }
 
 .homeButton:hover {
-  background: none;
+  background: transparent;
+  box-shadow: none;
 }
 
 .icon {
@@ -155,14 +156,14 @@ button:hover {
   margin-left: 10px;
 }
 
-input[type="checkbox"] {
+input[type='checkbox'] {
   margin-top: 2px;
   width: 15px;
   height: 15px;
   cursor: pointer;
 }
 
-input[type="checkbox"]:checked {
+input[type='checkbox']:checked {
   accent-color: #644d45;
 }
 
@@ -181,6 +182,6 @@ input[type="checkbox"]:checked {
   width: 25%;
   font-size: 12px;
   padding: 10px;
-  float:right;
-  margin-top : 3px;
+  float: right;
+  margin-top: 3px;
 }

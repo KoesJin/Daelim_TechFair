@@ -7,12 +7,9 @@ import { FaHome } from 'react-icons/fa';
 const SigninPage = () => {
   const navigate = useNavigate();
 
-  const handleGoHome = () => {
-    navigate('/'); // 홈 화면으로 이동
-  };
   return (
     <div className={styles.mainContainer}>
-      <button className={styles.homeButton} onClick={handleGoHome}>
+      <button className={styles.homeButton} onClick={() => navigate('/')}>
         <FaHome className={styles.icon} />
       </button>
       <div className={styles.leftContainer}>

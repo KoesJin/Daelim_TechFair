@@ -1,0 +1,65 @@
+.chatContainer {
+  padding: 5px;
+  background-color: #f0f0f0; /* 배경색 */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navItem {
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.messages {
+  flex: 1; /* 메시지 영역이 남은 공간을 차지하게 */
+  overflow-y: auto; /* 스크롤 가능 */
+  padding: 10px;
+  background-color: white; /* 메시지 배경색 */
+  border-radius: 8px; /* 메시지 박스 둥글게 */
+}
+
+.message {
+  max-width: 70%; /* 메시지 최대 너비 */
+  padding: 10px;
+  border-radius: 8px;
+  margin: 5px 0;
+  position: relative; /* 상대 위치 */
+}
+
+.userMessage {
+  background-color: #d4f5a1; /* 사용자 메시지 색상 */
+  align-self: flex-end; /* 오른쪽 정렬 */
+}
+
+.otherMessage {
+  background-color: #f1f1f1; /* 다른 사용자 메시지 색상 */
+  align-self: flex-start; /* 왼쪽 정렬 */
+}
+
+.inputContainer {
+  display: flex;
+  margin-top: 10px;
+}
+
+.input {
+  flex: 1; /* 입력창이 남은 공간을 차지하게 */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.sendButton {
+  background-color: #644d45; /* 전송 버튼 색상 */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}

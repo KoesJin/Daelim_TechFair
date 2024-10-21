@@ -46,6 +46,7 @@ const GamePage = () => {
               찍어주는 사진마다 <br /> 인생샷 만들어주는 <br /> 금손 친구
             </div>
           </div>
+          <div className={styles.vs}>vs</div>
           <div className={styles.option}>
             <div className={styles.optionLabel}>B</div>
             <img src={img} alt="Option B" className={styles.optionImage} />
@@ -57,6 +58,11 @@ const GamePage = () => {
       </div>
       <div className={styles.commentSection}>
         <h2>댓글</h2>
+        <form action="">
+          <img className={styles.profileImg} src={profileImg} alt="Profile" />
+          <input type="text" className={styles.userComment} placeholder="댓글을 작성하세요" />
+          <button className={styles.submit}>작성</button>
+        </form>
         <Comment
           profileImg="https://via.placeholder.com/40"
           username="사용자1"
