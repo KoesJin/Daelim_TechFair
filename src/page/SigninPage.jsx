@@ -13,7 +13,7 @@ const SigninPage = () => {
   return (
     <div className={styles.mainContainer}>
       <button className={styles.homeButton} onClick={handleGoHome}>
-      <FaHome className={styles.icon} />
+        <FaHome className={styles.icon} />
       </button>
       <div className={styles.leftContainer}>
         <img src={Logo} alt="이미지" className={styles.image} />
@@ -34,14 +34,37 @@ const SigninPage = () => {
               </label>
               <input id="password" type="password" className={styles.input} />
             </div>
-            <button type="submit" className={styles.button}>로그인</button>
+            <button type="submit" className={styles.button}>
+              로그인
+            </button>
           </form>
           <div className={styles.options}>
-            <span className={styles.optionLink} onClick={() => { navigate('/findidpage'); }}>아이디 찾기</span>
+            <span
+              className={styles.optionLink}
+              onClick={() => {
+                navigate('/findidpage');
+              }}
+            >
+              아이디 찾기
+            </span>
             <span className={styles.divider}>|</span>
-            <span className={styles.optionLink} onClick={() => { navigate('/findpwpage'); }}>비밀번호 찾기</span>
+            <span
+              className={styles.optionLink}
+              onClick={() => {
+                navigate('/findpwpage');
+              }}
+            >
+              비밀번호 찾기
+            </span>
             <span className={styles.divider}>|</span>
-            <span className={styles.optionLink} onClick={() => { navigate('/signuppage'); }}>회원가입</span>
+            <span
+              className={styles.optionLink}
+              onClick={() => {
+                navigate('/signuppage');
+              }}
+            >
+              회원가입
+            </span>
           </div>
         </div>
       </div>

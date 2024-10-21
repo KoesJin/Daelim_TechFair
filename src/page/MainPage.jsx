@@ -9,6 +9,10 @@ const MainPage = () => {
   const navigate = useNavigate();
   const balanceBoxes = new Array(60).fill(0);
 
+  const handleClick = () => {
+    navigate('/gamepage'); // GamePage로 이동
+  };
+
   return (
     <>
       <Header />
@@ -19,7 +23,7 @@ const MainPage = () => {
           <input type="text" placeholder="검색어를 입력하세요" className={styles.searchBar} />
         </div>
       </div>
-      <div className={styles.gridContainer}>
+      <div className={styles.gridContainer} onClick={handleClick}>
         {balanceBoxes.map((_, index) => (
           <BalanceBox key={index} />
         ))}
