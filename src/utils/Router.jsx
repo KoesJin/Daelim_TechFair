@@ -6,6 +6,7 @@ import SigninPage from '../page/SigninPage';
 import SignupPage from '../page/SignupPage';
 import GamePage from '../page/GamePage';
 import ChatPage from '../page/ChatPage';
+import MakeGamePage from '../page/MakeGamePage';
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: '/chatpage',
         element: <ChatPage />,
+      },
+      {
+        path: '/makegame',
+        element: <MakeGamePage />,
       },
     ],
   },
