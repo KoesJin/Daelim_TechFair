@@ -10,11 +10,11 @@ const baseURL = `${protocol}://121.139.20.242:1492/api`;
 
 const SignupPage = () => {
   const navigate = useNavigate();
-  const [id, setId] = useState('');
-  const [password, setPassword] = useState('');
-  const [passwordCheck, setPasswordCheck] = useState('');
-  const [name, setName] = useState('');
-  const [tel, setTel] = useState('');
+  const [userId, setUserId] = useState('');
+  const [userPw, setUserPw] = useState('');
+  const [confrimUserPw, setConfrimUserPw] = useState('');
+  const [userName , setUserName] = useState('');
+  const [userTel , setUserTel] = useState('');
   const [AgreedToAds, setAgreedToAds] = useState(false);
   const [AgreedToPrivacy, setAgreedToPrivacy] = useState(false);
   const [showAuth, setShowAuth] = useState(false);
@@ -27,7 +27,7 @@ const SignupPage = () => {
   const handleSendAuthCode = async () => {
     setShowAuth(true);
     try {
-      const response = await axios.get(`${baseURL}/user/sms/send-code`, tel);
+      const response = await axios.get(`${baseURL}/user/sms/send-code`, userTel);
       console.log('인증번호 받기 성공:', response.data.authCode);
       setAuthCode(response.data.authCode);
     } catch (error) {
@@ -55,11 +55,11 @@ const SignupPage = () => {
   };
 
   const signupData = {
-    id,
-    password,
-    passwordCheck,
-    name,
-    tel,
+    userId,
+    userPw,
+    confrimUserPw,
+    userName ,
+    userTel ,
     AgreedToPrivacy,
   };
 
@@ -76,7 +76,7 @@ const SignupPage = () => {
       return;
     }
 
-    if (password !== passwordCheck) {
+    if (userPw !== confrimUserPw) {
       alert('비밀번호가 일치하지 않습니다');
       return;
     }
@@ -108,8 +108,8 @@ const SignupPage = () => {
               id="username"
               type="text"
               className={styles.input}
-              value={id}
-              onChange={(e) => setId(e.target.value)}
+              value={userId}
+              onChange={(e) => setUserId(e.target.value)}
             />
           </div>
           <div className={styles.inputContainer}>
@@ -120,20 +120,20 @@ const SignupPage = () => {
               id="password"
               type="password"
               className={styles.input}
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              value={userPw}
+              onChange={(e) => setUserPw(e.target.value)}
             />
           </div>
           <div className={styles.inputContainer}>
-            <label htmlFor="passwordCheck" className={styles.label}>
+            <label htmlFor="confrimUserPw" className={styles.label}>
               비밀번호 확인
             </label>
             <input
-              id="passwordCheck"
+              id="confrimUserPw"
               type="password"
               className={styles.input}
-              value={passwordCheck}
-              onChange={(e) => setPasswordCheck(e.target.value)}
+              value={confrimUserPw}
+              onChange={(e) => setConfrimUserPw(e.target.value)}
             />
           </div>
           <div className={styles.inputContainer}>
@@ -144,8 +144,8 @@ const SignupPage = () => {
               id="name"
               type="text"
               className={styles.input}
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              value={userName }
+              onChange={(e) => setUserName(e.target.value)}
             />
           </div>
           <div className={styles.inputContainer}>
@@ -157,8 +157,8 @@ const SignupPage = () => {
                 id="tel"
                 type="tel"
                 className={`${styles.inputShort} ${styles.input}`}
-                value={tel}
-                onChange={(e) => setTel(e.target.value.replace(/[^0-9]/g, ''))}
+                value={userTel}
+                onChange={(e) => setUserTel(e.target.value.replace(/[^0-9]/g, ''))}
               />
               <button type="button" className={`${styles.sendButton} ${styles.button}`} onClick={handleSendAuthCode}>
                 인증번호 발송

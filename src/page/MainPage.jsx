@@ -22,9 +22,9 @@ const MainPage = () => {
           게임 만들기
         </button>
       </div>
-      <div className={styles.gridContainer} onClick={() => navigate('/gamepage')}>
+      <div className={styles.gridContainer}>
         {balanceBoxes.map((_, index) => (
-          <BalanceBox key={index} />
+          <BalanceBox key={index} onClick={() => navigate('/gamepage')}/>
         ))}
       </div>
     </>
