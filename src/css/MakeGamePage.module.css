@@ -2,6 +2,14 @@
   background-color: #c9c0c0;
   height: 100vh;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bottomBox {
+  height: 100%;
+  display: flex;
   justify-content: center;
   align-items: center;
 }

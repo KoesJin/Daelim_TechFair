@@ -4,6 +4,7 @@
   align-items: center;
   padding: 10px 20px;
   background-color: #644d45;
+  width: 100%;
 }
 
 .logo {
@@ -20,12 +21,12 @@
 
 .nav {
   display: flex;
-  justify-content: start; 
+  justify-content: start;
   margin-left: 4%;
 }
 
 .navItem {
-  margin-left: 15px; 
+  margin-left: 15px;
   font-size: 18px;
   color: white;
   text-decoration: none;
