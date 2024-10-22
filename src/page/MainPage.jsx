@@ -22,6 +22,7 @@ const MainPage = () => {
           <FaSearch className={styles.searchIcon} />
           <input type="text" placeholder="검색어를 입력하세요" className={styles.searchBar} />
         </div>
+        <button className={styles.moveMakeGame}>게임 만들기</button>
       </div>
       <div className={styles.gridContainer} onClick={handleClick}>
         {balanceBoxes.map((_, index) => (

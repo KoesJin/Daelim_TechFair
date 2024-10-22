@@ -4,6 +4,7 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .navItem {
@@ -17,7 +18,7 @@
   flex: 1; /* 메시지 영역이 남은 공간을 차지하게 */
   overflow-y: auto; /* 스크롤 가능 */
   padding: 10px;
-  background-color: #b0a097; /* 메시지 배경색 */
+  background-color: #b29f94; /* 메시지 배경색 */
   border-radius: 8px; /* 메시지 박스 둥글게 */
 }
 

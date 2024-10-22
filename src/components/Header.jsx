@@ -7,7 +7,7 @@ const Header = () => {
 
   // 새 창으로 채팅 페이지 열기
   const openChatWindow = () => {
-    window.open('/chatpage', '_blank', 'width=600,height=800');
+    window.open('/chatpage', '_blank', 'width=500,height=800');
   };
 
   return (
