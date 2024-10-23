@@ -1,97 +1,83 @@
-.body {
+.container {
   display: flex;
   flex-direction: column;
-}
-
-.container {
-  padding: 30px 30%;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
 }
 
 .title {
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 32px;
-  font-weight: bold;
   color: #4b3730;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 60px;
 }
 
-.categorySelector {
+.tabs {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+  width: 100%;
 }
 
-.categoryButton {
+.tabs button {
   padding: 10px 20px;
   border: none;
-  border-radius: 20px;
-  background-color: #e0e0e0;
   cursor: pointer;
-  transition: background-color 0.3s;
-  font-weight: bold;
+  background-color: #f0f0f0;
+  border-radius: 50px;
+  font-size: 16px;
 }
 
-.categoryButton:hover {
-  background-color: #d5d5d5;
-}
-
-.active {
-  background-color: #007bff;
-  color: white;
+.activeTab {
+  background-color: #503333;
+  color: #000;
 }
 
 .form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  width: 100%;
 }
 
 .inputGroup {
-  margin-bottom: 15px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  margin-bottom: 10px;
 }
 
-.label {
-  margin: 0 10px 5px 0;
-  font-weight: bold;
-}
-
-.input {
+input[type="text"] {
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 14px;
+  margin-bottom: 15px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.input:focus {
-  outline: none;
+input[type="file"] {
+  margin-left: 10px;
 }
 
-.imagePreview {
-  margin-top: 10px;
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+.preview {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-left: 10px;
 }
 
-.button {
-  width: 25%;
-  padding: 12px;
-  background-color: #007bff;
+.submitButton {
+  margin-top: 20px;
+  width: 20%;
+  padding: 10px;
+  background-color: #644d45;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 50px;
   cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.button:hover {
-  background-color: #0056b3;
+  font-size: 16px;
 }
