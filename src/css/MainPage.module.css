@@ -49,14 +49,3 @@ h1 {
   padding: 20px;
   overflow: auto;
 }
-
-.moveMakeGame {
-  border-radius: 5px;
-  padding: 8px;
-  border: none;
-  background-color: #d4c4bf;
-}
-
-.moveMakeGame:hover {
-  
-}

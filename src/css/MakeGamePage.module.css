@@ -1,40 +1,26 @@
 .body {
-  background-color: #c9c0c0;
-  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.bottomBox {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
+  padding: 30px 30%;
   border-radius: 12px;
-  background-color: #f5f5f5;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .title {
   text-align: center;
-  margin-bottom: 20px;
-  font-size: 24px;
+  margin-bottom: 40px;
+  font-size: 32px;
   font-weight: bold;
-  color: #333;
+  color: #4b3730;
 }
 
 .categorySelector {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .categoryButton {
@@ -59,14 +45,20 @@
 .form {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .inputGroup {
   margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .label {
-  margin-bottom: 5px;
+  margin: 0 10px 5px 0;
   font-weight: bold;
 }
 
@@ -74,7 +66,11 @@
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 14px;
+}
+
+.input:focus {
+  outline: none;
 }
 
 .imagePreview {
@@ -86,6 +82,7 @@
 }
 
 .button {
+  width: 25%;
   padding: 12px;
   background-color: #007bff;
   color: white;

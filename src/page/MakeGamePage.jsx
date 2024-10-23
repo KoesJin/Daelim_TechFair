@@ -31,7 +31,6 @@ const MakeGamePage = () => {
   return (
     <div className={styles.body}>
       <Header />
-      <div className={styles.bottombox}>
         <div className={styles.container}>
           <h1 className={styles.title}>게임 만들기</h1>
           <div className={styles.categorySelector}>
@@ -50,32 +49,36 @@ const MakeGamePage = () => {
           </div>
           <form onSubmit={handleSubmit} className={styles.form}>
             <div className={styles.inputGroup}>
-              <label htmlFor="question" className={styles.label}>
-                질문
-              </label>
-              <input
-                id="question"
-                type="text"
-                className={styles.input}
-                value={question}
-                onChange={(e) => setQuestion(e.target.value)}
-                required
-              />
+              <div>
+                <label htmlFor="question" className={styles.label}>
+                  질문
+                </label>
+                <input
+                  id="question"
+                  type="text"
+                  className={styles.input}
+                  value={question}
+                  onChange={(e) => setQuestion(e.target.value)}
+                  required
+                />
+              </div>
             </div>
             {gameType === 'balance' && (
               <>
                 <div className={styles.inputGroup}>
-                  <label htmlFor="optionA" className={styles.label}>
-                    A 값
-                  </label>
-                  <input
-                    id="optionA"
-                    type="text"
-                    className={styles.input}
-                    value={optionA}
-                    onChange={(e) => setOptionA(e.target.value)}
-                    required
-                  />
+                  <div>
+                    <label htmlFor="optionA" className={styles.label}>
+                      A 값
+                    </label>
+                    <input
+                      id="optionA"
+                      type="text"
+                      className={styles.input}
+                      value={optionA}
+                      onChange={(e) => setOptionA(e.target.value)}
+                      required
+                    />
+                  </div>
                   <div className={styles.inputGroup}>
                     <label htmlFor="imageA" className={styles.label}>
                       이미지 업로드
@@ -85,17 +88,19 @@ const MakeGamePage = () => {
                   </div>
                 </div>
                 <div className={styles.inputGroup}>
-                  <label htmlFor="optionB" className={styles.label}>
-                    B 값
-                  </label>
-                  <input
-                    id="optionB"
-                    type="text"
-                    className={styles.input}
-                    value={optionB}
-                    onChange={(e) => setOptionB(e.target.value)}
-                    required
-                  />
+                  <div>
+                    <label htmlFor="optionB" className={styles.label}>
+                      B 값
+                    </label>
+                    <input
+                      id="optionB"
+                      type="text"
+                      className={styles.input}
+                      value={optionB}
+                      onChange={(e) => setOptionB(e.target.value)}
+                      required
+                    />
+                  </div>
                   <div className={styles.inputGroup}>
                     <label htmlFor="imageB" className={styles.label}>
                       이미지 업로드
@@ -111,7 +116,6 @@ const MakeGamePage = () => {
             </button>
           </form>
         </div>
-      </div>
     </div>
   );
 };

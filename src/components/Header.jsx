@@ -27,6 +27,9 @@ const Header = () => {
         <div className={styles.navItem} onClick={openChatWindow}>
           온라인 채팅
         </div>
+        <div className={styles.navItem} onClick={() => navigate('/makegame')}>
+          게임 만들기
+        </div>
       </nav>
       <div className={styles.authButtons}>
         <div className={styles.authButton} onClick={() => navigate('/signinpage')}>
