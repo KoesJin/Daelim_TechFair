@@ -1,0 +1,85 @@
+.container {
+  background-image: url('../img/loginBackground.avif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  padding: 15% 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  margin-bottom: 15%;
+  color: #644d45;
+}
+
+.label {
+  align-self: flex-start;
+  font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.inputWithButton {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.input {
+  font-size: 16px;
+  padding: 8px 10px;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  border: 1px solid #e6e6e6;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.submit {
+  padding: 4% 6%;
+  margin-top: 15%;
+  border-radius: 50px;
+  border: none;
+  width: 50%;
+  font-size: 16px;
+  background-color: #eae3e1;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit:hover {
+  background-color: #846a61;
+  color: white;
+}
+
+.inputShort {
+  width: 70%;
+}
+
+.button {
+  width: 30%;
+  font-size: 12px;
+  padding: 10px;
+  float: right;
+  border-radius: 50px;
+  border: none;
+  margin-left: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  color: white;
+  background-color: #644d45;
+}
+
+.inputContainer {
+  margin-top: 20px;
+  width: 100%;
+}

@@ -13,8 +13,8 @@ const SignupPage = () => {
   const [userId, setUserId] = useState('');
   const [userPw, setUserPw] = useState('');
   const [confrimUserPw, setConfrimUserPw] = useState('');
-  const [userName , setUserName] = useState('');
-  const [userTel , setUserTel] = useState('');
+  const [userName, setUserName] = useState('');
+  const [userTel, setUserTel] = useState('');
   const [AgreedToAds, setAgreedToAds] = useState(false);
   const [AgreedToPrivacy, setAgreedToPrivacy] = useState(false);
   const [showAuth, setShowAuth] = useState(false);
@@ -58,8 +58,8 @@ const SignupPage = () => {
     userId,
     userPw,
     confrimUserPw,
-    userName ,
-    userTel ,
+    userName,
+    userTel,
     AgreedToPrivacy,
   };
 
@@ -144,7 +144,7 @@ const SignupPage = () => {
               id="name"
               type="text"
               className={styles.input}
-              value={userName }
+              value={userName}
               onChange={(e) => setUserName(e.target.value)}
             />
           </div>
@@ -152,7 +152,7 @@ const SignupPage = () => {
             <label htmlFor="tel" className={styles.label}>
               전화번호
             </label>
-            <div className={styles.inputWithButton}>
+            <div>
               <input
                 id="tel"
                 type="tel"
@@ -167,7 +167,7 @@ const SignupPage = () => {
           </div>
           {showAuth && (
             <div className={styles.inputContainer}>
-              <div className={styles.inputWithButton}>
+              <div>
                 <input
                   id="certification"
                   type="text"

@@ -7,6 +7,7 @@ import SignupPage from '../page/SignupPage';
 import GamePage from '../page/GamePage';
 import ChatPage from '../page/ChatPage';
 import MakeGamePage from '../page/MakeGamePage';
+import FindPage from '../components/FindPage';
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: '/makegame',
         element: <MakeGamePage />,
+      },
+      {
+        path: '/findpage',
+        element: <FindPage />,
       },
     ],
   },

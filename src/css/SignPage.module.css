@@ -116,7 +116,7 @@
   transition: all 0.3s ease;
 }
 
-button:hover {
+.button:hover {
   background-color: #5c3022;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }

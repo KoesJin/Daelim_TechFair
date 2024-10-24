@@ -7,6 +7,10 @@ import { FaHome } from 'react-icons/fa';
 const SigninPage = () => {
   const navigate = useNavigate();
 
+  const openFindWindow = (type) => {
+    window.open(`/findpage?type=${type}`, '_blank', 'width=500,height=600');
+  };
+
   return (
     <div className={styles.mainContainer}>
       <button className={styles.homeButton} onClick={() => navigate('/')}>
@@ -36,21 +40,11 @@ const SigninPage = () => {
             </button>
           </form>
           <div className={styles.options}>
-            <span
-              className={styles.optionLink}
-              onClick={() => {
-                navigate('/findidpage');
-              }}
-            >
+            <span className={styles.optionLink} onClick={() => openFindWindow('id')}>
               아이디 찾기
             </span>
             <span className={styles.divider}>|</span>
-            <span
-              className={styles.optionLink}
-              onClick={() => {
-                navigate('/findpwpage');
-              }}
-            >
+            <span className={styles.optionLink} onClick={() => openFindWindow('password')}>
               비밀번호 찾기
             </span>
             <span className={styles.divider}>|</span>
