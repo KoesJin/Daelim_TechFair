@@ -60,43 +60,48 @@ const MakeGamePage = () => {
           </button>
         </div>
         <div className={styles.form}>
-          <label>질문: </label>
-          <input
-            type="text"
-            value={question}
-            onChange={(e) => setQuestion(e.target.value)}
-            placeholder="질문을 입력하세요"
-          />
-          <div className={styles.inputGroup}>
-            <label>A</label>
+          <div className={styles.questionBox}>
+            <label className={styles.label}>질문</label>
             <input
+              className={styles.input}
+              type="text"
+              value={question}
+              onChange={(e) => setQuestion(e.target.value)}
+              placeholder="질문을 입력하세요"
+            />
+          </div>
+          <div className={styles.inputGroup}>
+            <label className={styles.label}>A</label>
+            <input
+              className={styles.input}
               type="text"
               value={valueA}
               onChange={(e) => setValueA(e.target.value)}
               placeholder="A 값을 입력하세요"
             />
-            <input
+          </div>
+          <input
               type="file"
               onChange={handleImageChangeA}
               accept="image/*"
             />
             {previewA && <img src={previewA} alt="A 미리보기" className={styles.preview} />}
-          </div>
           <div className={styles.inputGroup}>
-            <label>B</label>
+            <label className={styles.label}>B</label>
             <input
+              className={styles.input}
               type="text"
               value={valueB}
               onChange={(e) => setValueB(e.target.value)}
               placeholder="B 값을 입력하세요"
             />
-            <input
+          </div>
+          <input
               type="file"
               onChange={handleImageChangeB}
               accept="image/*"
             />
             {previewB && <img src={previewB} alt="B 미리보기" className={styles.preview} />}
-          </div>
           <button className={styles.submitButton} onClick={handleSubmit}>
             제출
           </button>
