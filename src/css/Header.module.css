@@ -5,6 +5,7 @@
   padding: 10px 20px;
   background-color: #644d45;
   width: 100%;
+  position: relative;
 }
 
 .logo {
@@ -42,6 +43,24 @@
   margin-left: auto;
 }
 
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column; /* 햄버거 바들이 세로로 쌓이게 설정 */
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+}
+
+.hamburgerIcon {
+  width: 30px;
+  height: 3px;
+  background-color: #ffffff; /* 햄버거 바 색상 */
+  margin: 4px 0;
+  transition: 0.3s; /* 클릭 시 애니메이션 */
+}
+
 .authButton {
   margin-left: 15px;
   font-size: 16px;
@@ -55,4 +74,36 @@
 .authButton:hover {
   font-weight: bold;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav,
+  .authButtons {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .showMenu {
+    display: flex;
+    z-index: 1000;
+  }
+
+  .hamburger {
+    display: flex; /* 모바일 화면에서만 햄버거 메뉴 보이게 */
+  }
+
+  .navItem,
+  .authButton {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    color: black;
+    font-size: 16px;
+    margin: 0;
+    background-color: white;
+  }
 }
