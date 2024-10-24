@@ -46,21 +46,26 @@ const MakeGamePage = () => {
       <h1 className={styles.title}>게임 만들기</h1>
       <div className={styles.container}>
         <div className={styles.tabs}>
-          <button
-            className={selectedTab === "balanceGame" ? styles.activeTab : ""}
-            onClick={() => handleTabChange("balanceGame")}
-          >
-            밸런스 게임
-          </button>
-          <button
-            className={selectedTab === "voteGame" ? styles.activeTab : ""}
-            onClick={() => handleTabChange("voteGame")}
-          >
-            찬반 투표
-          </button>
+          <div>
+            <button
+              className={selectedTab === "balanceGame" ? styles.activeTab : styles.button}
+              onClick={() => handleTabChange("balanceGame")}
+            >
+              밸런스 게임
+            </button>
+            <button
+              className={selectedTab === "voteGame" ? styles.activeTab : styles.button}
+              onClick={() => handleTabChange("voteGame")}
+            >
+              찬반 투표
+            </button>
+          </div>
+          <button className={styles.submitButton} onClick={handleSubmit}>
+          등록하기
+        </button>
         </div>
         <div className={styles.form}>
-          <div className={styles.questionBox}>
+          <div className={styles.inputGroup}>
             <label className={styles.label}>질문</label>
             <input
               className={styles.input}
@@ -95,16 +100,13 @@ const MakeGamePage = () => {
               onChange={(e) => setValueB(e.target.value)}
               placeholder="B 값을 입력하세요"
             />
-          </div>
-          <input
-              type="file"
-              onChange={handleImageChangeB}
-              accept="image/*"
-            />
-            {previewB && <img src={previewB} alt="B 미리보기" className={styles.preview} />}
-          <button className={styles.submitButton} onClick={handleSubmit}>
-            제출
-          </button>
+            </div>
+            <input
+                type="file"
+                onChange={handleImageChangeB}
+                accept="image/*"
+              />
+              {previewB && <img src={previewB} alt="B 미리보기" className={styles.preview} />}
         </div>
       </div>
     </>
