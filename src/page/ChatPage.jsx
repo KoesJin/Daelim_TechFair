@@ -10,7 +10,8 @@ const ChatPage = () => {
   // 메시지 전송 함수
   const handleSend = () => {
     if (input.trim()) {
-      const newMessage = { text: input, sender: 'user', timestamp: '12:00 PM' };
+      const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }); // 현재 시간
+      const newMessage = { text: input, sender: 'user', timestamp: currentTime };
       setMessages((prevMessages) => [...prevMessages, newMessage]);
       setInput('');
     }

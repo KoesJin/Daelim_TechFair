@@ -18,10 +18,10 @@ const Header = () => {
         </div>
       </div>
       <nav className={styles.nav}>
-        <div className={styles.navItem} onClick={() => navigate('/balance')}>
+        <div className={styles.navItem} onClick={() => navigate('/?gameType=밸런스게임')}>
           밸런스 게임
         </div>
-        <div className={styles.navItem} onClick={() => navigate('/vote')}>
+        <div className={styles.navItem} onClick={() => navigate('/?gameType=찬반투표')}>
           찬반 투표
         </div>
         <div className={styles.navItem} onClick={openChatWindow}>
